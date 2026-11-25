@@ -211,5 +211,46 @@
         <li>西瓜</li>
     </ol>
     ```
-   - type属性：可以改变前面的列表形式，常见形式有：123,abc, ABC,i、ii、iii, I、II、III。例如
+   - type属性：可以改变前面的列表形式，常见形式有：123, abc , ABC , i、ii、iii , I、II、III。例如：
+   ```<ol type="1/a/A/i/I">```
+           
+   - 有序列表的嵌套。例如：
+
+   ```
+   <ol>
+            <li>水果</li>
+            <li>
+                蔬菜
+                <ol>
+                    <li>白菜</li>
+                    <li>黄瓜</li>
+                    <li>西兰花</li>
+                </ol>
+            </li>
+            <li>肉类</li>
+    </ol>
+    ```
+- 无序列表
+    - 无序列表是一个项目的列表，此列项目使用粗体圆点进行标记,无序列表始于```<ul>```标签。每个列表始于```<li>```标签。例如：
+    ```
+    <ul>
+        <li>苹果</li>
+        <li>橘子</li>
+        <li>香蕉</li>
+    </ul>
+    ```
+    - type属性：disc默认实心圆；circle空心圆；square小方块；none不显示。例如：```<ul type="disc/circle/squre/none">```
+    - 无序列表的嵌套。例如：
+    ```
+    <ul>
+    <li>蔬菜</li>
+    <li>
+    水果
+    <ul>
+    <li>苹果</li>
+    <li>香蕉</li>
+    </li>
+    <li>肉类</li>
+    </ul>
+    ```
 
