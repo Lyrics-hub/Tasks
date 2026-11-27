@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #edf5fb;
+            font-family: "微软雅黑";
+        }
+       
+        .top{
+            height: 100px;
+            background-color:#2099a8;
+            text-align: center;
+            padding: 30px;
+            color:white;
+        }
+        nav{
+            background-color: #167480;
+            text-align: center;
+            padding: 12px;
+        }
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        nav a:hover{
+            color: #b6f2f8;
+        }
+        .card{
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,80,90,0.08);
+        }
+        .card,h2{
+            color: #2099a8;
+            margin-bottom: 12px;
+        }
+        input,
+        input,textarea{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #b7ecf3;
+            border-radius: 6%;
+        }
+        button{
+            background-color: #2099a8;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .pic{
+            width: 100%;
+            max-width: 600px;
+            height:auto;
+            display:block
+            border-radius 10px;
+            margin:10px auto;
+        }
+      
+    
+
+    
+    </style>
+   
+    
+
+   
+</head>
+<body>
+    <div class="top">
+        <h1>世界很小,中南民大</h1>
+        <p>我在民大的时光</p>
+    </div>
+    
+    <nav>
+        <a href="#about">关于我</a>
+        <a href="#scene">民大风景</a>
+        <a href="#food">民大美食</a>
+        <a href="#volunteer">志愿者</a>
+        <a href="#note">留言</a>
+    </nav>
+
+
+    <div class="card" id="about">
+        <h2>关于我</h2>
+        <p>我叫刘艺如,是中南民族大学的一名大一学生,目前就读于网络空间安全专业。</p>
+    </div>
+
+    <div class="card"  id="scene">
+        <h2>民大风景</h2>
+        <p>双子塔、南湖、晚霞</p>
+        <img src="双子塔.jpg" class="pic">
+        <img src="南湖.jpg" class="pic">
+       
+    </div>
+
+    <div class="card" id="food">
+        <h2>民大美食</h2>
+        <img src="美食.jpg" class="pic">
+        <img src="美食2.jpg"class="pic">
+        <p>还有很多...</p>
+    </div>
+
+    <div class="card" id="volunteer">
+        <h2>志愿时光</h2>
+        <p>志愿者活动</p>
+        <img src="志愿者1.jpg" class="pic">
+        <img src="志愿者2.jpg" class="pic">
+    </div>
+
+    <div class="card" id="note">
+        <h2>给我留言</h2>
+        <form >
+            <input type="text" placeholder="留下你的名字">
+            <textarea rows="5" placeholder="请输入留言内容"></textarea>
+            <button type="submit">提交</button>
+        </form>
+      
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我与民大</title>
+  <style>
+    /* 全部样式都在这里，不乱跑 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #edf5fb;
+      font-family: "微软雅黑";
+    }
+    /* 顶部标题 */
+    .top {
+      background: #2099a8;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    /* 导航 */
+    nav {
+      background: #167480;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    nav a:hover {
+      color: #b6f2f8;
+    }
+    /* 卡片 */
+    .card {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,80,90,0.08);
+    }
+    .card h2 {
+      color: #2099a8;
+      margin-bottom: 12px;
+    }
+    /* 图片 */
+    .pic {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    /* 表单 */
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #b7ecf3;
+      border-radius: 6px;
+    }
+    button {
+      background: #2099a8;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <h1>我与民大</h1>
+    <p>在民大，遇见热爱与星光</p >
+  </div>
+
+  <nav>
+    <a href=" ">关于我</a >
+    <a href="#view">民大风景</a >
+    <a href="#food">民大美食</a >
+    <a href="#volunteer">志愿时光</a >
+    <a href="#msg">给我留言</a >
+  </nav>
+
+  <div class="card" id="about">
+    <h2>📖 关于我</h2>
+    <p>你好！我是中南民族大学网络空间安全专业的学生。喜欢参加志愿活动，慢慢学习网页制作。</p >
+  </div>
+
+  <div class="card" id="view">
+    <h2>🌿 民大风景</h2>
+    <p>双子塔、南湖，处处都是好看的风景！</p >
+    < img src="tower.jpg" class="pic" alt="双子塔">
+  </div>
+
+  <div class="card" id="food">
+    <h2>🍜 民大美食</h2>
+    <p>食堂超多好吃的，幸福感拉满！</p >
+    < img src="food.jpg" class="pic" alt="美食">
+  </div>
+
+  <div class="card" id="volunteer">
+    <h2>✨ 志愿时光</h2>
+    <p>走出课堂，传递微光，收获温暖。</p >
+  </div>
+
+  <div class="card" id="msg">
+    <h2>💌 给我留言</h2>
+    <input type="text" placeholder="你的昵称">
+    <textarea rows="5" placeholder="写下想说的话"></textarea>
+    <button>提交留言</button>
+  </div>
+
+</body>
+</html>
