@@ -5,43 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        span{
-    color:red;
-     }
-
-     .sad{
-    color:red;
+     
+    .container{
+        width: 500px;
+        height: 500px;
+        background-color: #2b92d4;
+        margin: 40px auto;
+        animation-name: breathe;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        border-radius: 50%;
+    }
+   
+    @keyframes breathe{
+        0%{
+            opacity:0.2;
+            box-shadow: 0 1px 2px rgba(255,255,255,0.1);
         }
-
-        .content{
-    color:blue;
- }
- .size{
-    font-size:100px;
- }
-
-
- #mytitle{
-    border:12px solid red;
-            }
-
-            p,h3{
-    color:red;
-    font-size:30px;
-    }
-    table, th, td {
-  border: 1px solid black;
-
-    }
-    table {
-  border-collapse: collapse;
-    }
-    td, th {
-  padding: 15px;
-    }
-    td {
-        background-color: #f2f2f2;
-        color:red;
+        50%{
+            opacity:0.5;
+            box-shadow: 0 1px 2px rgba(18,190,84,0.76);
+        }
+        100%{
+            opacity:1;
+            box-shadow: 0 1px 2px rgba(59,255,255,1);
+        }
+       
     }
 
    
@@ -49,36 +41,10 @@
 </style>
 </head>
 <body>
-    <p>我先学数学再学<span>英语</span>
+    
 
-        <p>我很开心</p>
-        <p>我很高兴</p>
-        <p class="sad">我很难过</p>
+    <div class="container"></div>
 
-        <h3 class="content size">我是标题</h3>
 
-        <h2 id="mytitle">你好</h2>
-
-        <h3>你好</h3>
-        <p>你好</p>
-
-    <table>
-        <tr>
-            <th>姓名</th>
-            <th>年龄</th>
-            <th>职业</th>
-        </tr>
-        <tr>
-            <td>单元格</td>
-            <td>单元格</td>
-            <td>单元格</td>
-        </tr>
-        <tr>
-            <td>单元格</td>
-            <td>单元格</td>
-            <td>单元格</td>
-        </tr>
-    </table>
-            
 </body>
 </html>

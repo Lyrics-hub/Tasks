@@ -284,7 +284,8 @@ h1+p{
 }
 ```
 只有第一个p标签里面的内容一变红，下一个不变红。
-(4)通用兄弟选择器：选择E元素后面的所有兄弟元素F，作用于多个元素，用~隔开：E~F。例如：
+
+(4)通用兄弟选择器：选择E元素后面的所有兄弟元素F，作用于多个元素，用 ~ 隔开：E ~F。例如：
 ```
 <h1>标题</h1>
 <p>内容一</p>
@@ -297,6 +298,286 @@ h1~p{
 ```
 这样p标签后面所有的h1标签都变红。
 ### 9.盒子模型
+(1) content（内容）：盒子的内容，显示文本和图像
+  
+(2) Padding（内边距）：清楚内容周围的区域（两个值，第一个值代表上下，第二个值代表左右）
+  
+- padding-left/right/top/bottom:可以分别设置上下左右的边距 
+(3) Border（边框）：围绕在内边距和内容外的边框
+(4) Margin（外边距）：清除边框外的区域，外边距是透明的（两个值，第一个值代表上下，第二个值代表左右）
+
+- margin-left/right/top/bottom:可以分别设置上下左右的边距 
+```
+<div>我是内容</div>
+```
+```
+div{
+    padding:50px 10px;
+    border:5px solid red;
+    margin:50px 50px;
+    }
+```
+(5)如果把盒子模型看作快递，那么内容部分就是买的物品，内边距为物品外面的泡沫，边框等同于快递盒子，外边距等同于两个快递盒子之间的距离。
+### 10.弹性盒子模型
+(1)定义：弹性盒子模型是一种当页面需要适应不同的屏幕大小以及设备类型时，确保元素拥有恰当的行为的布局方式。引入弹性和的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。 
+
+(2)弹性盒子内容：弹性盒子由弹性容器和弹性子元素组成；弹性容器通过设置display属性的值为flex将其定义为弹性容器，弹性容器内包含了一个或多个子元素。(默认弹性盒子里元素横向摆放)
+
+(3)父元素上的属性：
+
+- display属性：```display：flex；```开启弹性盒
+- flex-direction属性：用于指定弹性子元素在父容器中的位置
+
+    - flex-direction：row；横向从左到右排列
+    - flex-direction：row-reverse；反转横向排列（右对齐，从后往前排，最后一项排在最前面）
+    - flex-direction：column；纵向排列、
+    - flex-direction：column-reverse；反转纵向排列（从后往前排，最后一项排在最上面）
+- justify-content属性：让子元素在垂直方向上对齐摆放（上中下）
+  
+    - jusitfy-content：flex-start；让子元素居上填充
+    - jusitfy-content：flex-end；让子元素居下填充
+    - jusitfy-content：center；让子元素居中填充
+- align-items属性：让子元素在水平方向上对齐摆放（左中右）
+    - align-items：flex-start；让子元素居左填充
+    - align-items：flex-end；让子元素居右填充
+    - align-items：center；让子元素居中填充
+    - 
+  这里演示一个让子元素完全居中的例子:![alt text](image-8.png)
+(4)子元素上的属性：用于设置子元素在容器中的占比空间（权重）
+- flex：数字；例如：
+```
+  <div class="content">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+```
+```
+ .content{
+        width: 300px;
+        height: 300px;
+        background-color: grey;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .box1{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        flex:3;
+    }
+    .box2{
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        flex:1;
+    }
+    .box3{
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        flex:1;
+```
+效果如下：![alt text](image-9.png)
+### 11.文档流
+(1)文档流是文档中可显示对象在排列时所占用的位置或空间，例如，块元素从上到下摆放，内联元素从左到右摆放。
+(2)文档流里面的限制非常多，导致很多页面效果无法实现
+- 高矮不齐，底边对齐。例如：
+```
+<span>你好</span>
+<img src="R-C.jpg">
+```
+![alt text](image-10.png)
+- 空白折叠：无论多少个空格、换行、tab都会只显示一个空格的效果
+```
+ <p>你好     很高兴见到你</p>
+```
+![alt text](image-12.png)
+
+
+ - 两个img图像之间会有空隙，如果想让它们没有空隙，则两个img必须前后紧密连接，但是这样不符合习惯.例如：
+  ```
+<img src="R-C.jpg" alt="R-C" width="300" height="200">
+<img src="R-C.jpg" alt="R-C" width="300" height="200">
+```
+ - ![alt text](image-13.png)
+(3)脱离文档流的方式：浮动、绝对定位、固定定位
+
+### 12.定位
+(1)position属性指定了元素的定位类型
+- relative：相对定位，通过改变元素距离上下左右的距离可以改变元素在页面中的任意位置
+- absolute：绝对定位，脱离文档流，不会参与正常的排版；定位元素会覆盖在标准元素的上面，且后设置的定位元素会覆盖在前一个定位元素上
+- fixed:固定定位：脱离文档流，元素在页面中的位置不会改变
+(2)设置定位之后，相对定位和绝对定位是相对于具有定位的父级元素进行位置调整，如果父级元素不存在，则继续向上逐级寻找，直到顶层文档。比如说，如果父级元素有定位，则子级元素的一些性质是以它的父级元素为参考的，比如给这个子级元素设置left：25 top：25，则它是距离父级元素的左边25，上边25，而不是距离文档左边25，上边25。![alt text](image-14.png)
+```
+<div class="container">
+        <div class="box1"></div>
+
+</div>
+```
+```
+.container{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        margin: 100px;
+
+
+    }
+    .box1{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+    }
+```
+### 13.圆角和阴影
+(1)圆角：border-radius
+
+-  四个值：第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角
+
+-  三个值：第一个值为左上角，第二个值为右上角和左下角，第三个值为右下角
+
+- 两个值：第一个值为左上角与右下角，第二个值为右上角与左下角
+
+- 一个值：四个圆角值相同
+  
+(2)阴影：box-shadow
+
+- h‑shadow：必须写，阴影水平位置
+
+- v‑shadow：必须写，阴影垂直位置
+
+- blur：可选，模糊程度
+
+- color：可选，阴影颜色
+```
+.container{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius:15px;
+        box-shadow: 10px 10px 5px grey;
+         }
+```
     
+![alt text](image-15.png)
+### 14.动画
+(1)动画是使元素从一种样式逐渐变化为另一种样式的效果,可以改变任意多的样式任意多的次数
+- 用百分比来规定变化发生的时间，或用关键词 "from" 和 "to"，等同于 0% 和 100%。0% 是动画的开始，100% 是动画的完成。
+(2)使用@keyframes创建动画
+```
+@keyframes name {
+  from | 0%{
+      css 样式
+  }
+  percent{
+      css 样式
+  }
+  to | 100%{
+      css 样式
+  }
+}
+```
+(3)name：动画名称，开发人员自己命名；
+percent：为百分比值，可以添加多个百分比值；
+
+(4)animation执行动画：animation：name duration timing-function delay iteration-count direction
+- name：设置动画的名称
+- duration：设置动画的持续时间
+- timing-function：设置动画效果的速率
+  - ease：逐渐变慢（默认）
+  - linear：匀速
+  - ease-in：加速
+  - ease-out：减速
+  - ease-in-out：先加速后减速
+
+- delay：设置动画的开始时间（延时执行）
+- iteration-count：设置动画循环的次数，infinite 为无限次数的循环
+- direction：设置动画播放的方向
+  -  normal：默认向前播放
+  -  alternate：偶数次向前播放，奇数次反向播放
+- animation-play-state：控制动画的播放状态，running 代表播放，paused 代表停止播放
+  
+(5)例子一：变色方块
+```
+.container{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: mymove;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    div:hover{
+        animation-play-state: paused;
+    }
+    @keyframes mymove{
+        0%{
+            background-color:red
+        }
+        25%{
+            background-color:blue
+        }
+        50%{
+            background-color:green
+        }
+        75%{
+            background-color:yellow
+        }
+        100%{
+            background-color:red
+        }
+    }
+```
+例子二：呼吸圆
+```
+.container{
+        width: 500px;
+        height: 500px;
+        background-color: #2b92d4;
+        margin: 40px auto;
+        animation-name: breathe;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        border-radius: 50%;
+    }
+    div:hover{
+        animation-play-state: paused;
+    }
+    @keyframes breathe{
+        0%{
+            opacity:0.2;
+            box-shadow: 0 1px 2px rgba(255,255,255,0.1);
+        }
+        50%{
+            opacity:0.5;
+            box-shadow: 0 1px 2px rgba(18,190,84,0.76);
+        }
+        100%{
+            opacity:1;
+            box-shadow: 0 1px 2px rgba(59,255,255,1);
+        }
+       
+    }
+```
+
+
+
+
+
+
+
+
+ 
+
 
 
